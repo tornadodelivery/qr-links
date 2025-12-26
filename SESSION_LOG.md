@@ -8,3 +8,4 @@
 | 3.0 | 2024-12-26 | Mobile UX Enhancement | ✅ Complete | Enabled permanent brand colors and touch feedback. |
 | 4.0 | 2024-12-26 | Visual Polish | 🔄 In Progress | Fixed contrast, upgraded Arabic fonts, added animated background. |
 | 5.0 | 2024-12-26 | UI Polish (Tornado FX) | 🔄 In Progress | Implemented rotating conic-gradient to match brand logo. |
+| 6.0 | 2024-12-26 | Performance Optimization | 🔄 In Progress | Fixed scrollbar jitter by converting background to fixed-position circle. |

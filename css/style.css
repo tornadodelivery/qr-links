@@ -216,36 +216,42 @@ footer {
 /* TORNADO BACKGROUND EFFECT */
 body::before {
     content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
+    position: fixed; /* Fix 1: Removes it from document flow (stops scrollbar jumping) */
+    top: 50%;
+    left: 50%;
+    /* Fix 2: Use viewport units to ensure it covers screens of all sizes */
+    width: 200vmax;
+    height: 200vmax;
+    /* Fix 3: Center alignment offset */
+    transform: translate(-50%, -50%);
 
-    /* The Tornado Swirl: Alternating Orange and Blue with Dark Gaps */
+    border-radius: 50%; /* Fix 4: Make it a circle so rotation doesn't change dimensions */
+
+    /* The Gradient (Keep as is) */
     background: conic-gradient(
         from 180deg at 50% 50%,
-        #0f0f0f 0deg,      /* Start Dark */
-        #f36f21 40deg,     /* Swirl 1: Orange */
-        #0f0f0f 100deg,    /* Dark Gap */
-        #0088cc 180deg,    /* Swirl 2: Blue */
-        #0f0f0f 260deg,    /* Dark Gap */
-        #f36f21 320deg,    /* Swirl 3: Orange */
-        #0f0f0f 360deg     /* End Dark */
+        #0f0f0f 0deg,
+        #f36f21 40deg,
+        #0f0f0f 100deg,
+        #0088cc 180deg,
+        #0f0f0f 260deg,
+        #f36f21 320deg,
+        #0f0f0f 360deg
     );
 
-    /* The "Gas" Effect: Heavy blur makes it look like wind/clouds */
     filter: blur(80px);
-    opacity: 0.35; /* Visible but allows text to pop */
+    opacity: 0.35;
+    z-index: -1;
+    pointer-events: none;
+
+    /* Fix 5: Hardware Acceleration */
+    will-change: transform;
 
     /* The Spin */
     animation: tornadoSpin 20s linear infinite;
-    z-index: -1;
-    pointer-events: none;
-    will-change: transform;
 }
 
 @keyframes tornadoSpin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
