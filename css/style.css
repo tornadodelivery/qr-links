@@ -74,6 +74,7 @@ header p {
     font-size: 1.2rem;
     font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', sans-serif;
     color: #e0e0e0;
+    direction: rtl;
 }
 
 /* MAIN CONTENT (BUTTONS) */
@@ -270,14 +271,20 @@ body::before {
 
 /* Call Now - Tornado Orange */
 .link-btn.call-now {
-    border-color: rgba(243, 111, 33, 0.4);
+    background-color: #f36f21;
+    border: 1px solid #f36f21;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(243, 111, 33, 0.4);
 }
 .link-btn.call-now svg {
-    fill: #f36f21;
+    fill: #ffffff;
 }
 .link-btn.call-now:hover {
-    border-color: #f36f21;
-    box-shadow: 0 0 15px rgba(243, 111, 33, 0.3);
+    background-color: #d85e19;
+    border-color: #d85e19;
+    box-shadow: 0 4px 15px rgba(243, 111, 33, 0.4);
 }
 
 /* Reset Button Styles */
