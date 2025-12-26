@@ -8,12 +8,15 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     direction: ltr;
-    /* Radial gradient background: Darker center, slightly lighter edges as requested,
-       but typically "darker center" implies a spotlight effect or reverse.
-       "Darker center, slightly lighter edges" - usually creates a vignette feel or spotlight.
-       Let's do a subtle radial gradient that feels premium.
-       Base #1a1a1a. Let's go from #2a2a2a (center) to #111111 (edge) for depth. */
-    background: radial-gradient(circle at center, #2a2a2a 0%, #111111 100%);
+
+    /* Ambient Animated Background */
+    background-color: #111111;
+    background-image:
+        radial-gradient(circle at 50% 10%, rgba(243, 111, 33, 0.25) 0%, transparent 60%), /* Orange Top Glow */
+        radial-gradient(circle at 90% 90%, rgba(0, 136, 204, 0.15) 0%, transparent 50%);  /* Blue Bottom Glow */
+    background-size: 150% 150%;
+    animation: ambientPulse 10s ease-in-out infinite alternate;
+
     color: white;
     display: flex;
     flex-direction: column;
@@ -65,6 +68,13 @@ h1 {
 p {
     color: #cccccc;
     font-size: 14px;
+}
+
+/* SUBTITLE STYLING */
+header p {
+    font-size: 1.2rem;
+    font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', sans-serif;
+    color: #e0e0e0;
 }
 
 /* MAIN CONTENT (BUTTONS) */
@@ -172,16 +182,16 @@ main {
     box-shadow: 0 0 15px rgba(225, 48, 108, 0.3);
 }
 
-/* WhatsApp Channel - Darker Green/Teal */
+/* WhatsApp Channel - Neon Emerald */
 .link-btn.whatsapp-channel {
-    border-color: rgba(7, 94, 84, 0.4);
+    border-color: rgba(0, 230, 118, 0.4);
 }
 .link-btn.whatsapp-channel svg {
-    fill: #075e54;
+    fill: #00E676;
 }
 .link-btn.whatsapp-channel:hover {
-    border-color: #075e54;
-    box-shadow: 0 0 15px rgba(7, 94, 84, 0.3);
+    border-color: #00E676;
+    box-shadow: 0 0 15px rgba(0, 230, 118, 0.3);
 }
 
 /* Complaint - Red */
@@ -202,4 +212,10 @@ footer {
     font-size: 12px;
     color: #666;
     text-align: center;
+}
+
+/* ANIMATIONS */
+@keyframes ambientPulse {
+    0% { background-position: 50% 0%; }
+    100% { background-position: 50% 20%; }
 }
