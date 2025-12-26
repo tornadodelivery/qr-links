@@ -271,7 +271,7 @@ body::before {
 
 /* Call Now - Tornado Orange */
 .link-btn.call-now {
-    background-color: #f36f21;
+    background-color: #f36f21a8;
     border: 1px solid #f36f21;
     color: #ffffff;
     font-size: 1.2rem;

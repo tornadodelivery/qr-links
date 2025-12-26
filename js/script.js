@@ -6,9 +6,7 @@ function downloadContact() {
         "FN:Tornado Delivery",
         "ORG:Tornado Delivery",
         "TEL;TYPE=CELL:+963945966622",
-        "TEL;TYPE=WORK:+963962059896",
         "URL:" + window.location.href,
-        "NOTE:Fast. Reliable. Everywhere.",
         "END:VCARD"
     ].join("\n");
 
