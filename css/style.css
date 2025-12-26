@@ -255,3 +255,34 @@ body::before {
     0% { transform: translate(-50%, -50%) rotate(0deg); }
     100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
+
+/* Save Contact - Gold/Amber */
+.link-btn.save-contact {
+    border-color: rgba(255, 193, 7, 0.4);
+}
+.link-btn.save-contact svg {
+    fill: #FFC107;
+}
+.link-btn.save-contact:hover {
+    border-color: #FFC107;
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.3);
+}
+
+/* Call Now - Tornado Orange */
+.link-btn.call-now {
+    border-color: rgba(243, 111, 33, 0.4);
+}
+.link-btn.call-now svg {
+    fill: #f36f21;
+}
+.link-btn.call-now:hover {
+    border-color: #f36f21;
+    box-shadow: 0 0 15px rgba(243, 111, 33, 0.3);
+}
+
+/* Reset Button Styles */
+button.link-btn {
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+}
