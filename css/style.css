@@ -116,38 +116,81 @@ main {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* PLATFORM SPECIFIC HOVER GLOWS */
+/* TOUCH FEEDBACK (Active) */
+.link-btn:active {
+    transform: scale(0.98);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* PLATFORM SPECIFIC STYLES (Default & Hover) */
+
 /* Whatsapp - Green */
+.link-btn.whatsapp {
+    border-color: rgba(37, 211, 102, 0.4);
+}
+.link-btn.whatsapp svg {
+    fill: #25D366;
+}
 .link-btn.whatsapp:hover {
     border-color: #25D366;
     box-shadow: 0 0 15px rgba(37, 211, 102, 0.3);
 }
 
-/* Facebook - Blue */
-.link-btn.facebook:hover {
-    border-color: #1877F2;
-    box-shadow: 0 0 15px rgba(24, 119, 242, 0.3);
-}
-
 /* Telegram - Light Blue */
+.link-btn.telegram {
+    border-color: rgba(0, 136, 204, 0.4);
+}
+.link-btn.telegram svg {
+    fill: #0088cc;
+}
 .link-btn.telegram:hover {
     border-color: #0088cc;
     box-shadow: 0 0 15px rgba(0, 136, 204, 0.3);
 }
 
+/* Facebook - Blue */
+.link-btn.facebook {
+    border-color: rgba(24, 119, 242, 0.4);
+}
+.link-btn.facebook svg {
+    fill: #1877F2;
+}
+.link-btn.facebook:hover {
+    border-color: #1877F2;
+    box-shadow: 0 0 15px rgba(24, 119, 242, 0.3);
+}
+
 /* Instagram - Pink/Purple */
+.link-btn.instagram {
+    border-color: rgba(225, 48, 108, 0.4);
+}
+.link-btn.instagram svg {
+    fill: #E1306C;
+}
 .link-btn.instagram:hover {
     border-color: #E1306C;
     box-shadow: 0 0 15px rgba(225, 48, 108, 0.3);
 }
 
 /* WhatsApp Channel - Darker Green/Teal */
+.link-btn.whatsapp-channel {
+    border-color: rgba(7, 94, 84, 0.4);
+}
+.link-btn.whatsapp-channel svg {
+    fill: #075e54;
+}
 .link-btn.whatsapp-channel:hover {
     border-color: #075e54;
     box-shadow: 0 0 15px rgba(7, 94, 84, 0.3);
 }
 
 /* Complaint - Red */
+.link-btn.complaint {
+    border-color: rgba(255, 68, 68, 0.4);
+}
+.link-btn.complaint svg {
+    fill: #ff4444;
+}
 .link-btn.complaint:hover {
     border-color: #ff4444;
     box-shadow: 0 0 15px rgba(255, 68, 68, 0.3);
