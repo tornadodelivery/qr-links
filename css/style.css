@@ -10,12 +10,11 @@ body {
     direction: ltr;
 
     /* Ambient Animated Background */
-    background-color: #111111;
-    background-image:
-        radial-gradient(circle at 50% 10%, rgba(243, 111, 33, 0.25) 0%, transparent 60%), /* Orange Top Glow */
-        radial-gradient(circle at 90% 90%, rgba(0, 136, 204, 0.15) 0%, transparent 50%);  /* Blue Bottom Glow */
-    background-size: 150% 150%;
-    animation: ambientPulse 10s ease-in-out infinite alternate;
+    background-color: #0f0f0f;
+
+    /* Tornado Effect Pseudo-element handles the background */
+    position: relative;
+    overflow-x: hidden;
 
     color: white;
     display: flex;
@@ -214,8 +213,39 @@ footer {
     text-align: center;
 }
 
-/* ANIMATIONS */
-@keyframes ambientPulse {
-    0% { background-position: 50% 0%; }
-    100% { background-position: 50% 20%; }
+/* TORNADO BACKGROUND EFFECT */
+body::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+
+    /* The Tornado Swirl: Alternating Orange and Blue with Dark Gaps */
+    background: conic-gradient(
+        from 180deg at 50% 50%,
+        #0f0f0f 0deg,      /* Start Dark */
+        #f36f21 40deg,     /* Swirl 1: Orange */
+        #0f0f0f 100deg,    /* Dark Gap */
+        #0088cc 180deg,    /* Swirl 2: Blue */
+        #0f0f0f 260deg,    /* Dark Gap */
+        #f36f21 320deg,    /* Swirl 3: Orange */
+        #0f0f0f 360deg     /* End Dark */
+    );
+
+    /* The "Gas" Effect: Heavy blur makes it look like wind/clouds */
+    filter: blur(80px);
+    opacity: 0.35; /* Visible but allows text to pop */
+
+    /* The Spin */
+    animation: tornadoSpin 20s linear infinite;
+    z-index: -1;
+    pointer-events: none;
+    will-change: transform;
+}
+
+@keyframes tornadoSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
